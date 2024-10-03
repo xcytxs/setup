@@ -1,10 +1,4 @@
-It looks like you're updating the project structure and the files within your `xcytxs_setup` directory. Based on the commit history, I'll reflect the changes in the documentation to ensure it aligns with your current setup.
-
-### Updated Project Structure and Documentation
-
----
-
-# **xcytos-setup Documentation**
+**xcytos-setup Documentation**
 
 ## **Overview**
 `xcytos-setup` is an automated setup tool designed to simplify the setup of Python environments. It verifies that necessary dependencies are installed, handles the configuration of ports and credentials, and offers an easy way to get your Python application up and running quickly.
