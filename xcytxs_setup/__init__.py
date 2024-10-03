@@ -5,6 +5,7 @@ import subprocess
 import argparse
 import socket
 
+# Ensure Python is installed
 def verify_python_installation():
     try:
         subprocess.run([sys.executable, '--version'], check=True, stdout=subprocess.PIPE)
@@ -13,6 +14,7 @@ def verify_python_installation():
         print("Python is not installed or not found in the PATH.")
         sys.exit(1)
 
+# Install requirements from a requirements.txt file if it exists
 def install_requirements():
     if os.path.exists('requirements.txt'):
         print("Installing from requirements.txt...")
@@ -20,6 +22,7 @@ def install_requirements():
     else:
         print("No requirements.txt found. Skipping dependency installation.")
 
+# Check Python files in the current directory for missing dependencies
 def find_missing_dependencies():
     print("Checking Python files for missing dependencies...")
     modules = set()
@@ -38,6 +41,7 @@ def find_missing_dependencies():
     print(f"Modules detected: {modules}")
     return modules
 
+# Install missing dependencies
 def install_missing(modules):
     for module in modules:
         try:
@@ -45,10 +49,12 @@ def install_missing(modules):
         except subprocess.CalledProcessError:
             print(f"Failed to install {module}")
 
+# Check if a port is available
 def check_port(port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        return s.connect_ex(('localhost', port)) == 0
+        return s.connect_ex(('localhost', port)) != 0
 
+# Prompt the user to choose an available port for a service
 def choose_port(service_name, default_port):
     while True:
         port = input(f"Enter port to use for {service_name} (default {default_port}): ") or default_port
@@ -58,6 +64,7 @@ def choose_port(service_name, default_port):
         else:
             print(f"Port {port} is in use, try a different one.")
 
+# Main function for the script
 def main():
     verify_python_installation()
 
@@ -70,9 +77,11 @@ def main():
 
     install_requirements()
 
+    # Detect and install missing dependencies
     missing_modules = find_missing_dependencies()
     install_missing(missing_modules)
 
+    # Port and service handling
     if args.services:
         ports = {}
         for idx, service in enumerate(args.services):
@@ -87,6 +96,7 @@ def main():
         print("No services specified. Exiting.")
         return
 
+    # Username and password setup
     username = args.username or input("Enter username: ")
     password = args.password or input("Enter password: ")
     
