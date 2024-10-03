@@ -1,0 +1,7 @@
+xcytxs/
+├── setup/
+│   ├── __init__.py    # Your app logic (main script)
+│   └── setup.py       # Script to install dependencies and configuration
+├── LICENSE            # Open source license (e.g., GPL-3.0)
+├── README.md          # Project documentation
+└── setup.py           # Package setup file for PyPI
