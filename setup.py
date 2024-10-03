@@ -3,19 +3,17 @@ from setuptools import setup, find_packages
 setup(
     name="xcytxs-setup",  # Package name
     version="0.1",        # Version
-    author="Your Name",   # Your name
-    author_email="your.email@example.com",  # Your email
+    author="xcyt",   # Your name
+    author_email="xcytdev@gmail.com",  # Your email
     description="An automated setup tool for configuring services and installing dependencies.",
-    long_description=open('README.md').read(),  # Read from the README.md file
+    long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url="https://github.com/xcytxs/setup",  # The project repository URL
-    packages=find_packages(),  # Automatically find your package
-    install_requires=[
-        'pip',   # Ensure pip is available
-    ],
+    url="https://github.com/xcytxs/setup",  # Project repository URL
+    packages=find_packages(),  # Find all packages
+    install_requires=['pip'],  # Ensure pip is available
     entry_points={
         'console_scripts': [
-            'xcytxs-setup = xcytxs_setup.main:main',  # The entry point for the CLI command
+            'xcytxs-setup = xcytxs_setup.main:main',  # CLI command entry point
         ],
     },
     classifiers=[
