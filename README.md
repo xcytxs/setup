@@ -1,4 +1,4 @@
-**xcytos-setup Documentation**
+# **xcytos-setup Documentation**
 
 ## **Overview**
 `xcytos-setup` is an automated setup tool designed to simplify the setup of Python environments. It verifies that necessary dependencies are installed, handles the configuration of ports and credentials, and offers an easy way to get your Python application up and running quickly.
@@ -12,7 +12,6 @@ xcytos-setup/                # Root directory for xcytos setup
 │
 ├── setup.py                 # The main setup script for the project
 ├── requirements.txt         # List of required Python packages
-├── config.json              # (Optional) Configuration file for environment-specific settings
 ├── LICENSE                  # Licensing information
 ├── README.md                # Project documentation (this file)
 ```
@@ -84,7 +83,7 @@ This will automatically install the required libraries if they are specified in 
 ---
 
 ## **License**
-The project is licensed under the `LICENSE` file, which details the terms and conditions of use.
+This project is licensed under the Apache License, Version 2.0. You can freely use, modify, and distribute the code under the terms specified in the license. A copy of the license is available in the `LICENSE` file in this repository.
 
 ---
 
